@@ -23,7 +23,7 @@
       "no-console": "off", // rule disallows calls or assignments to methods of the console object
       "no-debugger": "error", // disallow the use of debugger
       "no-undef": "off",
-      "max-len": ["error", { "code": 130 }], // enforce a maximum line length
+      "max-len": ["off", { "code": 140 }], // enforce a maximum line length
       "no-useless-concat": "off", // rule aims to flag the concatenation of 2 literals when they could be combined into a single literal
       "class-methods-use-this": ["off", { "exceptMethods": ["render"] }], // rule is aimed to flag class methods that do not use thiss
       "space-infix-ops": ["off", { "int32Hint": false }],

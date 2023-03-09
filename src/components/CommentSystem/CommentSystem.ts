@@ -32,9 +32,9 @@ export default class CommentSystem {
   }
 
   public createUser(nickname: string, avatar: string): void {
-    const userAvatar: HTMLElement | null = document.querySelector(".user-field__avatar-img");
+    const userAvatar: HTMLImageElement | null = document.querySelector(".user-field__avatar-img");
     const userNickname: HTMLElement | null = document.querySelector(".user-field__nickname");
-    if (userAvatar !== null) userAvatar.setAttribute("src", avatar);
+    if (userAvatar !== null) userAvatar.src = avatar;
     if (userNickname !== null) userNickname.innerHTML = nickname;
 
     const data = this.getDATA();
