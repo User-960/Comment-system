@@ -3,6 +3,16 @@ body {
   height: 100%;
 }
 
+body {
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  color: $color-grey;
+  overflow-x: hidden;
+  min-width: 500px;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;

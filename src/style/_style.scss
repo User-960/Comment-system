@@ -1,0 +1,37 @@
+/* Comment System styles */
+.comment-system {
+  margin-top: 50px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: $color-light;
+    left: 0;
+    right: 0;
+  }
+  &__header {
+    padding-top: $spacing-large;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+  }
+  &__title {
+    padding-bottom: 5px;
+    margin-right: $spacing-large;
+    font-family: 'Montserrat';
+    border-bottom: 3px solid $color-black;
+    color: $color-black;
+  }
+  &__count {
+    opacity: 0.4;
+  }
+  &__filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 60%;
+  }
+}
