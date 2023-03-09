@@ -2,6 +2,7 @@ import CommentSystem from "../CommentSystem/CommentSystem";
 import UserForm from "../UserForm/UserForm";
 import Favorites from "../Favorites/Favorites";
 import Replies from "../Replies/Replies";
+import Filter from "../Filter/Filter";
 
 // class for creating a comment block
 export default class Comments extends CommentSystem {
@@ -11,6 +12,7 @@ export default class Comments extends CommentSystem {
 
   public favorites: Favorites;
   private replies: Replies;
+  private filter: Filter;
 
   constructor(userForm: UserForm) {
     super();
@@ -18,6 +20,7 @@ export default class Comments extends CommentSystem {
 
     this.favorites = new Favorites();
     this.replies = new Replies(userForm, this.favorites);
+    this.filter = new Filter(this);
 
     this.updateComments();
 
@@ -68,6 +71,7 @@ export default class Comments extends CommentSystem {
 
     this.replies.addListenerReplyBtn(this.commentID);
     this.favorites.addListenerCommentsFavoritesBtns(this.commentID);
+    this.filter.currentFilter();
 
     this.commentID++;
 
