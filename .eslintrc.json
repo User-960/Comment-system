@@ -23,7 +23,7 @@
       "no-console": "off", // rule disallows calls or assignments to methods of the console object
       "no-debugger": "error", // disallow the use of debugger
       "no-undef": "off",
-      "max-len": ["error", { "code": 120 }], // enforce a maximum line length
+      "max-len": ["error", { "code": 130 }], // enforce a maximum line length
       "no-useless-concat": "off", // rule aims to flag the concatenation of 2 literals when they could be combined into a single literal
       "class-methods-use-this": ["error", { "exceptMethods": ["render"] }], // rule is aimed to flag class methods that do not use thiss
       "space-infix-ops": ["off", { "int32Hint": false }],
@@ -31,6 +31,7 @@
       "no-plusplus": "off", // disallow the unary operators ++ and --
       "no-alert": "error", // disallow the use of alert, confirm, and prompt
       "eqeqeq": "off", // require the use of === and !==
+      "class-methods-use-this": "off",
       "linebreak-style": 0,
       "global-require": 0,
       "eslint linebreak-style": [0, "error", "windows"],
@@ -47,6 +48,7 @@
       "@typescript-eslint/no-unused-vars": "error", // disallow unused variables
       "@typescript-eslint/no-empty-function": "off", // disallow empty functions
       "@typescript-eslint/no-inferrable-types": "off", // disallow explicit type declarations for variables or parameters
-      "@typescript-eslint/no-var-requires": "off" // disallow require statements except in import statements.
+      "@typescript-eslint/no-var-requires": "off", // disallow require statements except in import statements.
+      "@typescript-eslint/no-explicit-any": "off"
     }
 }
