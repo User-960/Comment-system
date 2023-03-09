@@ -1,6 +1,7 @@
 import CommentSystem from "../CommentSystem/CommentSystem";
 import UserForm from "../UserForm/UserForm";
 import Favorites from "../Favorites/Favorites";
+import Rating from "../Rating/Rating";
 
 // class for replyes
 export default class Replies extends CommentSystem {
@@ -9,10 +10,12 @@ export default class Replies extends CommentSystem {
   private replyID: number;
 
   private favorites: Favorites;
+  private rating: Rating;
 
-  constructor(userForm: UserForm, favorites: Favorites) {
+  constructor(userForm: UserForm, rating: Rating, favorites: Favorites) {
     super();
     this.userForm = userForm;
+    this.rating = rating;
     this.favorites = favorites;
 
     this.commentID = 0;
@@ -82,6 +85,7 @@ export default class Replies extends CommentSystem {
     this.renderReply(commentID, replyHTMLTemplate);
 
     if (commentID !== undefined) {
+      this.rating.addListenerReplyRatingBtns(commentID, this.replyID);
       this.favorites.addListenerReplyFavoritesBtns(commentID, this.replyID);
     }
 
@@ -148,6 +152,7 @@ export default class Replies extends CommentSystem {
       );
       this.renderReply(commentBlock.commentID, htmlTemplateReply);
 
+      this.rating.addListenerReplyRatingBtns(commentBlock.commentID, commentBlock.replies[replyBlock].replyID);
       this.favorites.addListenerReplyFavoritesBtns(commentBlock.commentID, commentBlock.replies[replyBlock].replyID);
     }
   }

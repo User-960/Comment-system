@@ -3,6 +3,7 @@ import UserForm from "../UserForm/UserForm";
 import Favorites from "../Favorites/Favorites";
 import Replies from "../Replies/Replies";
 import Filter from "../Filter/Filter";
+import Rating from "../Rating/Rating";
 
 // class for creating a comment block
 export default class Comments extends CommentSystem {
@@ -10,16 +11,18 @@ export default class Comments extends CommentSystem {
   // block comment number
   private commentID: number;
 
-  public favorites: Favorites;
   private replies: Replies;
+  private rating: Rating;
+  public favorites: Favorites;
   private filter: Filter;
 
   constructor(userForm: UserForm) {
     super();
     this.commentID = super.getNumberComments();
 
+    this.rating = new Rating();
     this.favorites = new Favorites();
-    this.replies = new Replies(userForm, this.favorites);
+    this.replies = new Replies(userForm, this.rating, this.favorites);
     this.filter = new Filter(this);
 
     this.updateComments();
@@ -70,6 +73,7 @@ export default class Comments extends CommentSystem {
     this.renderComment(commentHTMLTemplate);
 
     this.replies.addListenerReplyBtn(this.commentID);
+    this.rating.addListenerCommentsRatingBtns(this.commentID);
     this.favorites.addListenerCommentsFavoritesBtns(this.commentID);
     this.filter.currentFilter();
 
@@ -123,6 +127,7 @@ export default class Comments extends CommentSystem {
       this.replies.updateReply(item);
 
       this.replies.addListenerReplyBtn(item.commentID);
+      this.rating.addListenerCommentsRatingBtns(item.commentID);
       this.favorites.addListenerCommentsFavoritesBtns(item.commentID);
 
     });
