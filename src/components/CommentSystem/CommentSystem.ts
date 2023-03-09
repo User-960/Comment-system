@@ -1,7 +1,11 @@
+import UserForm from "../UserForm/UserForm";
+
 // class for comment system
 export default class CommentSystem {
   private DATA: string | null;
   private numberComments: number;
+
+  protected userForm: UserForm;
 
   constructor() {
     // data initialization
@@ -13,6 +17,8 @@ export default class CommentSystem {
     }
 
     this.numberComments = 0;
+
+    this.userForm = new UserForm();
   }
 
   // user block hiding method

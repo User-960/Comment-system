@@ -25,13 +25,12 @@
       "no-undef": "off",
       "max-len": ["error", { "code": 130 }], // enforce a maximum line length
       "no-useless-concat": "off", // rule aims to flag the concatenation of 2 literals when they could be combined into a single literal
-      "class-methods-use-this": ["error", { "exceptMethods": ["render"] }], // rule is aimed to flag class methods that do not use thiss
+      "class-methods-use-this": ["off", { "exceptMethods": ["render"] }], // rule is aimed to flag class methods that do not use thiss
       "space-infix-ops": ["off", { "int32Hint": false }],
       "no-unused-expressions": "off", // rule aims to eliminate unused expressions which have no effect on the state of the program.
       "no-plusplus": "off", // disallow the unary operators ++ and --
       "no-alert": "error", // disallow the use of alert, confirm, and prompt
       "eqeqeq": "off", // require the use of === and !==
-      "class-methods-use-this": "off",
       "linebreak-style": 0,
       "global-require": 0,
       "eslint linebreak-style": [0, "error", "windows"],
