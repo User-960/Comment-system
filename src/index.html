@@ -73,7 +73,27 @@
               </div>
             </div>
           </div>
-
+        
+          <div class="comment-system__user-field">
+            <div class="user-field__avatar">
+              <img class="user-field__avatar-img" src="./images/ava.png" alt="avatar">
+            </div>
+            <div class="user-field__content">
+              <div class="user-field__title">
+                <h4 class="user-field__nickname">Jake Kane</h4>
+                <p class="user-field__maxchar">Max <span>1000</span> symbols</p>
+              </div>
+        
+              <form class="user-field__form">
+                <textarea class="user-field__textarea" maxlength="1000" placeholder="Type text..." type="text" cols="1"
+                  rows="1"></textarea>
+                <button class="user-field__btn user-field__btn--disable" type="button" data-mode="comment">Send</button>
+                <p class="user-field__maxchar-warning">Too long message</p>
+              </form>
+            </div>
+          </div>
+        
+          <div class="comment-system__comments"></div>
         </div>
       </div>
     </main>
