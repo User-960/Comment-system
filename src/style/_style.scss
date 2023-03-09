@@ -125,3 +125,104 @@
     margin-bottom: 0px;
   }
 }
+
+/*USER FIELD*/
+
+.comment-system__user-field {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.user-field {
+  &__avatar img {
+    border-radius: 50%;
+    width: 61px;
+    height: 61px;
+  }
+  &__content {
+    flex-grow: 1;
+    margin-left: 30px;
+  }
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    max-width: 688px;
+    margin-bottom: 20px;
+    margin-right: 27%;
+  }
+  &__nickname {
+    font-weight: 600;
+    color: $color-blue;
+  }
+  &__maxchar {
+    font-style: italic;
+    font-size: 14px;
+    color: $color-black;
+    opacity: 0.4;
+  }
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  &__textarea {
+    display: inline-block;
+    resize: none;
+    min-width: 69%;
+    background: $color-white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    /* padding: 20px 10px 30px 30px; */
+  
+    line-height: 21px;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    color: $color-black;
+  }
+  &__textarea::placeholder {
+    line-height: 21px;
+    font-size: 18px;
+    color: $color-black;
+    opacity: 0.4;
+  }
+  &__btn {
+    display: block;
+    width: 100%;
+    margin-left: 30px;
+    background-color: $color-light-green;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: $color-black;
+    border-radius: 5px;
+    transition: background-color ease-in-out 0.2s;
+    max-height: 61px;
+    padding: 15px 0;
+  }
+  &__btn:hover {
+    background-color: $color-green;
+    transition: background-color ease-in-out 0.2s;
+  }
+  &__btn--disable {
+    background-color: #A1A1A1;
+  }
+  &__btn--disable:hover {
+    cursor: auto;
+    background-color: #A1A1A1;
+  }
+  &__maxchar-warning {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    max-width: 23%;
+    text-align: center;
+    font-size: 14px;
+    color: $color-error-dark;
+    display: none;
+  }
+}
