@@ -226,3 +226,143 @@
     display: none;
   }
 }
+
+/*COMMENT BLOCK*/
+.comment-block {
+  &__comment {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  &__reply {
+    display: flex;
+    margin: 28px 0px 30px 90px;
+  }
+  &__content {
+    margin-left: 30px;
+  }
+  &__title {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  &__avatar img {
+    border-radius: 50%;
+    max-width: 61px;
+    max-height: 61px;
+    width: 61px;
+    height: 61px;
+  }
+  &__nickname {
+    margin-right: 15px;
+    font-weight: 600;
+    color: $color-blue;
+  }
+  &__prenickname {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    color: $color-black;
+    opacity: 0.4;
+  }
+  &__prenickname svg {
+    margin-right: $spacing-medium;
+  }
+  &__time {
+    font-size: 14px;
+    color: $color-black;
+    opacity: 0.4;
+  }
+  &__text {
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-black;
+    margin-bottom: 15px;
+  }
+}
+
+.comment-block__btn {
+  &-block {
+    display: flex;
+  }
+  &-block {
+    display: flex;
+  }
+  &-reply,
+  &-liked {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: $color-black;
+    opacity: 0.4;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    margin-right: 20px;
+    transition: opacity ease-in-out 0.2s;
+  }
+  &-reply svg {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+  }
+  &-reply:hover,
+  &-liked:hover {
+    opacity: 1;
+    transition: opacity ease-in-out 0.2s;
+  }
+  &-liked svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+  }
+  &-rating {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.btn-rating {
+  &__plus,
+  &__minus {
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: ease-in-out 0.2s;
+  }
+  &__plus:hover,
+  &__minus:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: ease-in-out 0.2s;
+  }
+  &__plus:hover,
+  &__minus:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: ease-in-out 0.2s;
+  }
+  &__plus {
+    margin-left: 10px;
+    color: #8AC540;
+  }
+  &__minus {
+    margin-right: 10px;
+    color: #FF0000;
+  }
+  &__plus--disable {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #d6ebbc;
+  }
+  &__minus--disable {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #f59191;
+  }
+  &__counter {
+    font-size: 18px;
+  }
+}
