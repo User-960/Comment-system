@@ -25,7 +25,7 @@ body {
 
 /* scrollbar for FireFox */
 * {
-  scrollbar-color: $color-dark $color-white;
+  scrollbar-color: $color-blue $color-dark;
   scrollbar-width: thin;
 }
 
@@ -35,10 +35,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $color-dark;
+  background-color: $color-blue;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: $color-white;
+  background-color: $color-dark;
 }
