@@ -1,5 +1,6 @@
 import CommentSystem from "../CommentSystem/CommentSystem";
 import UserForm from "../UserForm/UserForm";
+import Replies from "../Replies/Replies";
 
 // class for creating a comment block
 export default class Comments extends CommentSystem {
@@ -7,9 +8,13 @@ export default class Comments extends CommentSystem {
   // block comment number
   private commentID: number;
 
+  private replies: Replies;
+
   constructor(userForm: UserForm) {
     super();
     this.commentID = super.getNumberComments();
+
+    this.replies = new Replies(userForm);
 
     this.updateComments();
 
@@ -23,6 +28,8 @@ export default class Comments extends CommentSystem {
       }
       else if (userForm.sendBtn && !(userForm.sendBtn.classList.contains("user-field__btn--disable")) && userForm.sendBtn.dataset.mode === "reply") 
       {
+        const replyText = userForm.getValueTextarea();
+        this.replies.createReplyes(replyText);
         userForm.clearTextarea();
         userForm.sendBtn.dataset.mode = "comment";
         this.userForm.changeBtn("Send");
@@ -55,6 +62,8 @@ export default class Comments extends CommentSystem {
 
     const commentHTMLTemplate = this.getTemplateComment(this.commentID, nickName, avatar, commetsText, currentDate.displayDate);
     this.renderComment(commentHTMLTemplate);
+
+    this.replies.addListenerReplyBtn(this.commentID);
 
     this.commentID++;
 
@@ -103,11 +112,9 @@ export default class Comments extends CommentSystem {
       );
 
       this.renderComment(htmlTemplateComment);
-      // this.replies.updateReply(item);
+      this.replies.updateReply(item);
 
-      // this.replies.addListenerReplyBtn(item.commentID);
-      // this.rating.addListenerCommentsRatingBtns(item.commentID);
-      // this.favorites.addListenerCommentsFavoritesBtns(item.commentID);
+      this.replies.addListenerReplyBtn(item.commentID);
 
     });
 
