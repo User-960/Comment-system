@@ -46,7 +46,6 @@ export default class CommentSystem {
     };
 
     localStorage.setItem("DATA", JSON.stringify(data));
-
   }
 
   protected getUserNickname() {
