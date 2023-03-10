@@ -1,0 +1,68 @@
+@media (max-width: 1200px) {
+  .user-field {
+    &__textarea {
+      width: 100%;
+    }
+    &__maxchar-warning {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: calc(50% - 178px / 2);
+      font-size: 12px;
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .filter__dropdown {
+    min-width: 150px;
+  }
+  .comment-system__filter {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .user-field {
+    &__nickname {
+      font-size: 18px;
+    }
+    &__maxchar {
+      font-size: 12px;
+    }
+    &__textarea::placeholder {
+      font-size: 14px;
+    }
+  }
+  
+  .comment-block {
+    &__comment {
+      display: block;
+      position: relative;
+      margin-bottom: 35px;
+    }
+    &__content {
+      margin-left: 0;
+    }
+    &__reply {
+      display: block;
+      position: relative;
+      margin-left: 70px;
+    }
+    &__title {
+      position: absolute;
+      top: 18px;
+      left: 80px;
+      right: 0;
+    }
+    &__text {
+      margin-left: 80px;
+    }
+    &__btn-block {
+      margin-left: 72px;
+    }
+    &__prenickname {
+      font-size: 14px;
+    }
+  }
+}
