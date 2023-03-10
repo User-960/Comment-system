@@ -29,6 +29,7 @@
     opacity: 0.4;
   }
   &__filter {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -105,17 +106,15 @@
     transition: opacity ease-in-out 0.2s;
     display: flex;
     align-items: center;
-    position: relative;
+    padding: 0 5px;
   }
   &__item span {
     color: $color-black;
     opacity: 0.4;
   }
   &__item svg {
-    position: absolute;
-    left: -25px;
     display: none;
-    z-index: -1;
+    margin-right: 5px;
   }
   &__item:hover span {
     opacity: 1;
