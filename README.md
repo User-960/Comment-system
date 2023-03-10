@@ -1,39 +1,14 @@
-# WEBPACK
+# Comment-system
 
-To install packages, use the command
+The main purpose of the project is to write the project on TypeScript and use bundler Webpack. The project itself is a Comment system.
 
-```shell
-npm install
-```
+### Project Opportunities
 
-## Commands
+The project allows you to make comments, like, rate, respond to a specific comment, filter by date, rating and answers, as well as view those comments that you liked.
 
-### Launching a development server
+What is used:
 
-```shell
-npm run start
-```
-
-### Building a project without optimization
-
-```shell
-npm run build-dev
-```
-
-### Building a project with optimization
-
-```shell
-npm run build-prod
-```
-
-### Cleaning up the dist folder
-
-```shell
-npm run clear
-```
-
-### Checking the src folder for an error according to the set of rules
-
-```shell
-npm run eslint
-```
+- Programming languages: HTML, CSS, JavaScript ES6;
+- Bundler: Webpack;
+- Preprocessor: SCSS;
+- Libraries: Babel, ESLint, Husky;
