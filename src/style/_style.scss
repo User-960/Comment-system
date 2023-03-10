@@ -277,6 +277,15 @@
     color: $color-black;
     margin-bottom: 15px;
   }
+  &__no-selected {
+    display: flex;
+    align-items: center;
+    height: 150px;
+  }
+  &__no-selected-span {
+    margin-right: 10px;
+    font-size: 20px;
+  }
 }
 
 .comment-block__btn {

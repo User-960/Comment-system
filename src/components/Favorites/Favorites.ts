@@ -12,15 +12,22 @@ export default class Favorites extends CommentSystem {
   public renderFavoriteComments(): void {
     const currentData = super.getDATA();
 
-    for (const favoriteComment in currentData.user.favorites) {
-      const avatar = currentData.user.favorites[favoriteComment].commentAvatar;
-      const nickName = currentData.user.favorites[favoriteComment].commentNickname;
-      const text = currentData.user.favorites[favoriteComment].commentText;
-      const time = currentData.user.favorites[favoriteComment].commentTime.displayDate;
-
-      const htmlTemplate = this.getTemplateFavoriteComment(nickName, avatar, text, time);
+    if (Object.keys(currentData.user.favorites).length === 0) {
+      const htmlTemplate = this.getEmptyTemplateFavoriteComment();
       const comments: HTMLElement | null = document.querySelector(".comment-system__comments");
       if (comments) comments.insertAdjacentHTML("afterbegin", htmlTemplate);
+    } else {
+      for (const favoriteComment in currentData.user.favorites) {
+        
+        const avatar = currentData.user.favorites[favoriteComment].commentAvatar;
+        const nickName = currentData.user.favorites[favoriteComment].commentNickname;
+        const text = currentData.user.favorites[favoriteComment].commentText;
+        const time = currentData.user.favorites[favoriteComment].commentTime.displayDate;
+
+        const htmlTemplate = this.getTemplateFavoriteComment(nickName, avatar, text, time);
+        const comments: HTMLElement | null = document.querySelector(".comment-system__comments");
+        if (comments) comments.insertAdjacentHTML("afterbegin", htmlTemplate);
+      }
     }
   }
 
@@ -203,6 +210,23 @@ export default class Favorites extends CommentSystem {
               <p class="comment-block__text">
                 ${commentsTxt}
               </p>
+            </div>
+          </div>
+        </div>
+    `;
+  }
+
+  private getEmptyTemplateFavoriteComment(): string {
+    return `
+        <div class="comment-system__comment-block" data-favorite="favorite">
+          <div class="comment-block__comment">
+            <div class="comment-block__content">
+              <div class="comment-block__no-selected">
+                <span class="comment-block__no-selected-span">No selected comments</span>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                  <linearGradient id="GCWVriy4rQhfclYQVzRmda_hRIvjOSQ8I0i_gr1" x1="9.812" x2="38.361" y1="9.812" y2="38.361" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f44f5a"></stop><stop offset=".443" stop-color="#ee3d4a"></stop><stop offset="1" stop-color="#e52030"></stop></linearGradient><path fill="url(#GCWVriy4rQhfclYQVzRmda_hRIvjOSQ8I0i_gr1)" d="M24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,12.955,35.045,4,24,4z M24,38	c-7.732,0-14-6.268-14-14s6.268-14,14-14s14,6.268,14,14S31.732,38,24,38z"></path><linearGradient id="GCWVriy4rQhfclYQVzRmdb_hRIvjOSQ8I0i_gr2" x1="6.821" x2="41.08" y1="6.321" y2="40.58" gradientTransform="translate(-.146 .354)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f44f5a"></stop><stop offset=".443" stop-color="#ee3d4a"></stop><stop offset="1" stop-color="#e52030"></stop></linearGradient><polygon fill="url(#GCWVriy4rQhfclYQVzRmdb_hRIvjOSQ8I0i_gr2)" points="13.371,38.871 9.129,34.629 34.629,9.129 38.871,13.371"></polygon>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
