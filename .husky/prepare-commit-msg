@@ -1,3 +1,0 @@
-#!/bin/sh
-COMMIT_MESSAGE_FILE=$1
-echo "feat: ..." > $COMMIT_MESSAGE_FILE
